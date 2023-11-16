@@ -21,3 +21,18 @@
 		}
 	}
 }
+
+.grid-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+	gap: rem(64) rem(32);
+}
+
+.post-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+	gap: rem(32);
+	img {
+		aspect-ratio: 1/1;
+	}
+}

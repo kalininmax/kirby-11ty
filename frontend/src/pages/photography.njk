@@ -1,0 +1,25 @@
+{% extends "../templates/page.njk" %}
+
+{% block mainContent %}
+	<article>
+
+		<div class="container">
+				<h1>{{ post.title }}</h1>
+
+			<div>
+				{{ post.text | safe }}
+				<ul class="post-list">
+				{% for item in post.images %}
+					<li>
+						<figure>
+						{% image item.url, "Image", post.slug, "(max-width: 480px) 480px, (max-width: 960px) 960px, 100vw" %}
+						</figure>
+					</li>
+				{% endfor %}
+				</ul>
+				<a class="btn" href="/">Back</a>
+			</div>
+		</div>
+
+	</article>
+{% endblock %}

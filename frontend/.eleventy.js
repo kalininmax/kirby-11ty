@@ -3,6 +3,8 @@ const yaml = require('js-yaml');
 const shortcodes = require('./src/shortcodes');
 const PATHS = require('./paths');
 
+const imageShortcode = require('./src/shortcodes/remoteImg');
+
 /** @param {import("@11ty/eleventy").UserConfig} config */
 module.exports = (config) => {
 	config.ignores.add('src/components');
@@ -10,6 +12,8 @@ module.exports = (config) => {
 	Object.keys(shortcodes).forEach((name) =>
 		config.addShortcode(name, shortcodes[name])
 	);
+
+	config.addAsyncShortcode('image', imageShortcode);
 
 	config.addFilter('debug', (...args) => console.log(...args));
 

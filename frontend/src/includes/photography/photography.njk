@@ -1,0 +1,16 @@
+<section class="photography">
+	<div class="container">
+		<h1>Photography</h1>
+
+		<ul class="grid-list">
+			{% for item in photography %}
+				<li>
+					<h2><a href="/photography/{{ item.slug }}/index.html">{{ item.title }}</a></h2>
+					<a href="/photography/{{ item.slug }}/index.html">
+						{% image item.poster.url, "Image", 'home', "(max-width: 480px) 480px, (max-width: 960px) 960px, 100vw" %}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>
