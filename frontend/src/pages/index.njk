@@ -7,22 +7,8 @@
 			<ul>
 				<li><a href="/photography">Photography</a></li>
 				<li><a href="/notes">Notes</a></li>
-				<li><a href="/about">About us</a></li>
+				<li><a href="/about-us">About us</a></li>
 			</ul>
 		</div>
 	</nav>
-
-	<br>
-
-	<div class="container">
-		<h2>Contacts</h2>
-		<p><b>Address</b>: {{ contacts.address | safe }}</p>
-		<p><b>Email</b>: {{ contacts.email }}</p>
-		<p><b>Phone</b>: {{ contacts.phone }}</p>
-		<ul class="socials">
-			{% for item in contacts.social %}
-				<li><a href="{{ item.url }}" target="_blank">{{ item.platform }}</a></li>
-			{% endfor %}
-		</ul>
-	</div>
 {% endblock %}

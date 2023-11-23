@@ -1,0 +1,15 @@
+{% extends "../templates/page.njk" %}
+
+{% block mainContent %}
+	<div class="container">
+		<h2>Contacts</h2>
+		<p><b>Address</b>: {{ contacts.address | safe }}</p>
+		<p><b>Email</b>: {{ contacts.email }}</p>
+		<p><b>Phone</b>: {{ contacts.phone }}</p>
+		<ul class="socials">
+			{% for item in contacts.social %}
+				<li><a href="{{ item.url }}" target="_blank">{{ item.platform }}</a></li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}
