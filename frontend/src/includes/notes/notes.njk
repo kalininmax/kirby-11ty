@@ -1,0 +1,18 @@
+<section class="notes">
+	<div class="container">
+		<h1>Notes</h1>
+
+		<ul class="grid-list">
+			{% for item in notes %}
+				<li>
+					<h2><a href="/notes/{{ item.slug }}">{{ item.title }}</a></h2>
+					<time>{{ item.date }}</time>
+					<a href="/notes/{{ item.slug }}">
+						{% image item.cover.url, "", 'home', "(max-width: 480px) 480px, (max-width: 960px) 960px, 100vw" %}
+					</a>
+					{{ item.text | truncate(280) | safe }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

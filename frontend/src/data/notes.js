@@ -14,7 +14,7 @@ module.exports = async function () {
 	const response = await $fetch(API_URL, {
 		method: 'post',
 		body: {
-			query: 'page("photography").children.sortBy("date", "desc")',
+			query: 'page("notes").children.sortBy("date", "desc")',
 			select: {
 				title: true,
 				text: 'page.text.toBlocks.toHtml',
@@ -24,11 +24,8 @@ module.exports = async function () {
 					query: 'page.images.first',
 					select: ['url'],
 				},
-				images: {
-					query: 'page.images',
-					select: {
-						url: true,
-					},
+				tags: {
+					query: 'page.content.tags',
 				},
 			},
 		},

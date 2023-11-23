@@ -1,0 +1,5 @@
+pagination:
+  data: notes
+  size: 1
+  alias: post
+permalink: notes/{{ post.slug }}/index.html

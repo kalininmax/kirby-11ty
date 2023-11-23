@@ -1,0 +1,17 @@
+{% extends "../templates/page.njk" %}
+
+{% block mainContent %}
+	<article>
+
+		<div class="container">
+			<h1>{{ post.title }}</h1>
+			<p>{{ post.tags }}</p>
+			<div>
+				{{ post.text | safe }}
+
+				<a class="btn" href="/notes">Back</a>
+			</div>
+		</div>
+
+	</article>
+{% endblock %}

@@ -14,22 +14,12 @@ module.exports = async function () {
 	const response = await $fetch(API_URL, {
 		method: 'post',
 		body: {
-			query: 'page("photography").children.sortBy("date", "desc")',
+			query: 'page("about")',
 			select: {
-				title: true,
-				text: 'page.text.toBlocks.toHtml',
-				slug: true,
-				date: 'page.date.toDate("d.m.Y")',
-				cover: {
-					query: 'page.images.first',
-					select: ['url'],
-				},
-				images: {
-					query: 'page.images',
-					select: {
-						url: true,
-					},
-				},
+				address: true,
+				email: true,
+				phone: true,
+				social: 'page.social.toStructure',
 			},
 		},
 		headers,

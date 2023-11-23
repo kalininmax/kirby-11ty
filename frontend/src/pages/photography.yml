@@ -1,5 +1,1 @@
-pagination:
-  data: photography
-  size: 1
-  alias: post
-permalink: photography/{{ post.slug }}/index.html
+permalink: /photography/index.html

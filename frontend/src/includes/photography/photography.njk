@@ -5,9 +5,9 @@
 		<ul class="grid-list">
 			{% for item in photography %}
 				<li>
-					<h2><a href="/photography/{{ item.slug }}/index.html">{{ item.title }}</a></h2>
-					<a href="/photography/{{ item.slug }}/index.html">
-						{% image item.poster.url, "Image", 'home', "(max-width: 480px) 480px, (max-width: 960px) 960px, 100vw" %}
+					<h2><a href="/photography/{{ item.slug }}">{{ item.title }}</a></h2>
+					<a href="/photography/{{ item.slug }}">
+						{% image item.cover.url, "", 'home', "(max-width: 480px) 480px, (max-width: 960px) 960px, 100vw" %}
 					</a>
 				</li>
 			{% endfor %}
